@@ -1,3 +1,11 @@
 # replit 
 .replit
 replit.nix
+
+node_modules/
+.upm/
+
+npm-debug.log
+coverage/
+dist/
+build/
