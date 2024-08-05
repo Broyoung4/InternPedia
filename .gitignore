@@ -2,8 +2,9 @@
 .replit
 replit.nix
 
-node_modules/
-.upm/
+# anywhere in .gitignore
+node_modules
+.upm
 
 npm-debug.log
 coverage/
