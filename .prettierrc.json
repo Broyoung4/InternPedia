@@ -1,0 +1,9 @@
+{
+  "printWidth": 100, // Maximum line length
+  "tabWidth": 2, // Number of spaces per indent
+  "singleQuote": true, // Use single quotes
+  "trailingComma": "es5", // Add trailing commas
+  "semi": true, // Use semicolons
+  "bracketSpacing": true, // Add space inside brackets
+  "arrowParens": "avoid" // Avoid parentheses around single-argument arrow function
+}
