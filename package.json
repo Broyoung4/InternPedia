@@ -27,8 +27,12 @@
     "vite": "^3.0.4"
   },
   "dependencies": {
+    "@chec/commerce.js": "^2.8.0",
     "@headlessui/react": "^2.1.2",
+    "@stripe/react-stripe-js": "^2.7.3",
+    "@stripe/stripe-js": "^4.2.0",
     "clsx": "^2.1.1",
+    "react-hook-form": "^7.52.2",
     "react-icons": "^5.2.1",
     "react-router-dom": "^6.26.0"
   }

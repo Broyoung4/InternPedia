@@ -5,13 +5,13 @@ const NavLinks = [
     icon: 'HomeIcon',
   },
   {
-    title: 'Shirts',
-    path: '/shirts',
+    title: 'Men',
+    path: '/mens',
     icon: 'InfoIcon',
   },
   {
-    title: 'Stickers',
-    path: '/stickers',
+    title: 'Women',
+    path: '/womens',
     icon: 'MailIcon',
   },
 ]

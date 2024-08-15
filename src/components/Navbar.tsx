@@ -7,11 +7,16 @@ import { IoCartOutline } from "react-icons/io5";
   import Search, { SearchSkeleton } from './Search'; 
 //const NavbarLinks = React.lazy(() => import('./NavbarLinks'));
 import { HiBars3 } from "react-icons/hi2";
+import MobileMenu from './Mobile-menu';
 
 const Navbar = () => {
+  
   return (
     <nav className="relative flex items-center justify-between p-4 lg:px-6">
-      <div className="flex items-start justify-start text-left sm:hidden">
+      <div className="block flex-none md:hidden">
+        {/* <Suspense fallback={null}>
+          <MobileMenu menu={NavLinks} />
+        </Suspense> */}
         <HiBars3 size={30} className="h-6 w-6 text-neutral-500 dark:text-white" />
       </div>
       <div className='flex items-start justify-start text-left'>
