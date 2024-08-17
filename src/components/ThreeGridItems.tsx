@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 interface ThreeGridItemsProps {
@@ -10,7 +11,7 @@ const ThreeGridItems: React.FC<ThreeGridItemsProps> = ({items}) => {
   return (
     <div className='mx-auto grid max-w-screen-2xl gap-4 px-4 pb-4 md:grid-cols-6 md:grid-rows-2 lg:max-h-[calc(100vh-200px)]'>
       <div className='md:col-span-4 md:row-span-2 rounded-md cursor-pointer'>
-        <a href={items[0].path} className='relative block aspect-square h-full w-full'>
+        <Link to={`/product/${items[0].id}`} className='relative block aspect-square h-full w-full'>
         <div className='group flex h-full w-full items-center justify-center overflow-hidden rounded-lg border bg-white hover:border-blue-600 dark:bg-black relative border-neutral-200 dark:border-neutral-800'>
           <img src={items[0].imgSrc} alt='first shoe' className='relative h-full w-full object-contain transition duration-300 ease-in-out group-hover:scale-105' />
           <div className="absolute bottom-0 left-0 flex w-full px-4 pb-4 @container/label lg:px-20 lg:pb-[35%]">
@@ -19,11 +20,11 @@ const ThreeGridItems: React.FC<ThreeGridItemsProps> = ({items}) => {
               <p className="flex-none rounded-full bg-blue-600 p-2 text-white">{items[0].price}
                 <span className="ml-1 inline hidden @[275px]/label:inline">USD</span></p></div></div>
         </div>
-      </a>
+      </Link>
       </div>
       {items.slice(1,3).map((item)=> (
         <div key={item.id} className='md:col-span-2 md:row-span-1 border border-neutral-500 rounded-md cursor-pointer'>
-          <a className="relative block aspect-square h-full w-full" href={item.path}>
+          <Link className="relative block aspect-square h-full w-full" to={`/product/${item.id}`}>
             <div className="group flex h-full w-full items-center justify-center overflow-hidden rounded-lg border bg-white hover:border-blue-600 dark:bg-black relative border-neutral-200 dark:border-neutral-800">
             <img alt="Acme Drawstring Bag" className="relative h-full w-full object-contain transition duration-300 ease-in-out group-hover:scale-105" src={item.imgSrc} />
               <div className="absolute bottom-0 left-0 flex w-full px-4 pb-4 @container/label">
@@ -35,7 +36,7 @@ const ThreeGridItems: React.FC<ThreeGridItemsProps> = ({items}) => {
                 </div>
               </div>
             </div>
-          </a>
+          </Link>
         </div>
       ) )}
 

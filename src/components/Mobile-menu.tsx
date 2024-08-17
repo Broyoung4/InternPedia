@@ -1,4 +1,4 @@
-import { Dialog, Transition } from '@headlessui/react';
+import { Dialog, DialogTitle, DialogOverlay, Transition, TransitionChild } from '@headlessui/react';
 import { Link } from 'react-router-dom';
 import { Fragment, useEffect, useState } from 'react';
 import { HiBars3, HiXMark } from "react-icons/hi2";
@@ -35,7 +35,7 @@ const MobileMenu = ({menu}) => {
           onClose={closeMobileMenu}
         >
           <div className="min-h-screen text-center">
-            <Transition.Child
+            <TransitionChild
               as={Fragment}
               enter="ease-out duration-300"
               enterFrom="opacity-0"
@@ -45,13 +45,13 @@ const MobileMenu = ({menu}) => {
               leaveTo="opacity-0"
             >
               <Dialog.Overlay className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
-            </Transition.Child>
+            </TransitionChild>
 
             <span className="inline-block h-screen align-middle" aria-hidden="true">
               &#8203;
             </span>
 
-            <Transition.Child
+            <TransitionChild
               as={Fragment}
               enter="ease-in-out duration-300"
               enterFrom="opacity-0 scale-95"
@@ -62,12 +62,12 @@ const MobileMenu = ({menu}) => {
             >
               <div className="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
                 <div className="flex items-center justify-between">
-                  <Dialog.Title
+                  <DialogTitle
                     as="h3"
                     className="text-lg font-medium leading-6 text-gray-900"
                   >
                     Menu
-                  </Dialog.Title>
+                  </DialogTitle>
                   <button
                     type="button"
                     onClick={closeMobileMenu}
@@ -81,7 +81,7 @@ const MobileMenu = ({menu}) => {
                   <ul className='space-y-4'>
                     {menu.map((link) => (
                       <li key={link.title}>
-                        <Link to={link.path} className='text-sm font-medium text-neutral-700 dark:text-neutral-200 hover:text-neutral-800 dark:hover:text-neutral-100' onClick={closeMobileMenu}>
+                        <Link to={`/product/${link.id}`} className='text-sm font-medium text-neutral-700 dark:text-neutral-200 hover:text-neutral-800 dark:hover:text-neutral-100' onClick={closeMobileMenu}>
                           {link.title}
                         </Link>
                       </li>
@@ -89,7 +89,7 @@ const MobileMenu = ({menu}) => {
                   </ul>
                 </div>
               </div>
-            </Transition.Child>
+            </TransitionChild>
           </div>
         </Dialog>
       </Transition>

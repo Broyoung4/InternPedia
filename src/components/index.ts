@@ -1,4 +1,10 @@
 export { default as Navbar } from './Navbar';
 export { default as Search } from './Search';
-export { default as MobileMenu } from './MobileMenu';
-export { default as Cart } from './Cart';
+export { default as MobileMenu } from './Mobile-menu';
+export { default as Breadcrumbs } from './Breadcrumbs';
+export { default as DescriptionBox } from './DescriptionBox';
+export { default as ThreeGridItems } from './ThreeGridItems';
+export { default as Items } from './Items';
+export { default as ProductDisplay } from './ProductDisplay';
+export { default as GridItems } from './GridItems';
+export { default as RelatedProducts } from './RelatedProducts';
