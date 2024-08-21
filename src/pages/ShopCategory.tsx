@@ -8,7 +8,7 @@ const ShopCategory = ({category}) => {
   const {itemsArr} = useContext(ShopContext);
   return (
     <div className='flex flex-col md:flex-row gap-4 mx-auto mt-8 md:mt-12'>
-      <div className='fixed z-10  w-full px-2 py-3 rounded-md'>
+      {/* <div className='fixed z-10  w-full px-2 py-3 rounded-md'>
         <Menu>
           <MenuButton className="w-full inline-flex items-center justify-between gap-2 rounded-md bg-gray-800 py-3 px-2 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-700 data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white">
             Options
@@ -52,12 +52,15 @@ const ShopCategory = ({category}) => {
         </Menu>
           
         
-      </div>
-      <div className='grid md:grid-cols-3 grid-cols-1 w-full mt-10 justify-center mx-auto'>
+      </div> */}
+      <div className='grid md:grid-cols-3 grid-cols-1 w-full mt-10 justify-center mx-auto gap-6'>
         {itemsArr.map((item, i)=> {
          if (category === item.category) {
            return <Items key={`${item.title}_${i}`} id={item.id} title={item.title} imgSrc={item.imgSrc} price={item.price} />
-         } else {
+         }else if (category === 'all') {
+           return <Items key={`${item.title}_${i}`} id={item.id} title={item.title} imgSrc={item.imgSrc} price={item.price} />
+         }
+         else {
            return null;
          }
         } )}

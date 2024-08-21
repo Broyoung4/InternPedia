@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Suspense } from 'react';
 import { IoLogoSlack } from "react-icons/io";
@@ -9,9 +9,10 @@ import { IoCartOutline } from "react-icons/io5";
 import { HiBars3 } from "react-icons/hi2";
 import MobileMenu from './Mobile-menu';
 import MenuComp from './Mobile';
+import { ShopContext } from '../context/ShopContext';
 
 const Navbar = () => {
-  
+  const {getTotalCartItems} = useContext(ShopContext);
   return (
     <nav className="relative flex items-center justify-between p-4 lg:px-6">
       <div className="block flex-none md:hidden">
@@ -52,6 +53,7 @@ const Navbar = () => {
       <div className='group flex items-end justify-end space-x-4'>
         <Link to='/cart' className='flex items-center shadow-2xl px-4 py-3  border bg-white hover:border-blue-600 dark:bg-black relative border-neutral-200 dark:border-neutral-800 rounded-xl '>
           <IoCartOutline size={20} className='group-hover:scale-110' />
+          <div className='flex items-center justify-center text-red-600 rounded-full'>{getTotalCartItems()}</div>
         </Link>
       </div>
       

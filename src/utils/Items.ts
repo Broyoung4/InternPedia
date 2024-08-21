@@ -29,28 +29,28 @@ const itemsArr = [
     id: 1,
     title: 'Shoe 1',
     imgSrc: Shoe1,
-    price: '$200',
+    price: '200',
     category: 'men'
   },
   {
     id: 2,
     title: 'Shoe 2',
     imgSrc: Shoe2,
-    price: '$100',
+    price: '100',
     category: 'men'
   },
   {
     id: 3,
     title: 'Shoe 3',
     imgSrc: Shoe3,
-    price: '$150',
+    price: '150',
     category: 'men'
   },
   {
     id: 4,
     title: 'Shoe 4',
     imgSrc: Shoe4,
-    price: '$150',
+    price: '150',
     category: 'men'
   },
 
@@ -58,7 +58,7 @@ const itemsArr = [
     id: 5,
     title: 'Shoe 5',
     imgSrc: Shoe5,
-    price: '$150',
+    price: '150',
     category: 'men'
   },
 
@@ -66,7 +66,7 @@ const itemsArr = [
     id: 6,
     title: 'Shoe 6',
     imgSrc: Shoe6,
-    price: '$150',
+    price: '150',
     category: 'men'
   },
 
@@ -74,7 +74,7 @@ const itemsArr = [
     id: 7,
     title: 'Shoe 7',
     imgSrc: Shoe7,
-    price: '$150',
+    price: '150',
     category: 'men'
   },
 
@@ -82,7 +82,7 @@ const itemsArr = [
     id: 8,
     title: 'Shoe 8',
     imgSrc: Shoe8,
-    price: '$150',
+    price: '150',
     category: 'men'
   },
 
@@ -90,7 +90,7 @@ const itemsArr = [
     id: 9,
     title: 'Shoe 9',
     imgSrc: Shoe9,
-    price: '$150',
+    price: '150',
     category: 'men'
   },
 
@@ -98,7 +98,7 @@ const itemsArr = [
     id: 10,
     title: 'Shoe 10',
     imgSrc: Shoe10,
-    price: '$150',
+    price: '150',
     category: 'men'
   },
 
@@ -106,7 +106,7 @@ const itemsArr = [
     id: 11,
     title: 'Shoe 11',
     imgSrc: Shoe11,
-    price: '$150',
+    price: '150',
     category: 'men'
   },
 
@@ -114,7 +114,7 @@ const itemsArr = [
     id: 12,
     title: 'Shoe 12',
     imgSrc: Shoe12,
-    price: '$150',
+    price: '150',
     category: 'men'
   },
 
@@ -122,7 +122,7 @@ const itemsArr = [
     id: 13,
     title: 'Shoe 13',
     imgSrc: Shoe13,
-    price: '$150',
+    price: '150',
     category: 'men'
   },
 
@@ -130,7 +130,7 @@ const itemsArr = [
     id: 14,
     title: 'Shoe 14',
     imgSrc: Shoe14,
-    price: '$150',
+    price: '150',
     category: 'men'
   },
   //females
@@ -139,49 +139,49 @@ const itemsArr = [
     id: 15,
     title: 'femShoe 1',
     imgSrc: FemaleShoe1,
-    price: '$300',
+    price: '300',
     category: 'women'
   },
   {
     id: 16,
     title: 'femShoe 2',
     imgSrc: FemaleShoe2,
-    price: '$500',
+    price: '500',
     category: 'women'
   },
   {
     id: 17,
     title: 'femShoe 3',
     imgSrc: FemaleShoe3,
-    price: '$300',
+    price: '300',
     category: 'women'
   },
   {
     id: 18,
     title: 'femShoe 4',
     imgSrc: FemaleShoe4,
-    price: '$500',
+    price: '500',
     category: 'women'
   },
   {
     id: 19,
     title: 'femShoe 5',
     imgSrc: FemaleShoe5,
-    price: '$300',
+    price: '300',
     category: 'women'
   },
   {
     id: 20,
     title: 'femShoe 6',
     imgSrc: FemaleShoe6,
-    price: '$1000',
+    price: '1000',
     category: 'women'
   },
   {
     id: 21,
     title: 'femShoe 7',
     imgSrc: FemaleShoe7,
-    price: '$300',
+    price: '300',
     category: 'women'
   },
 ]

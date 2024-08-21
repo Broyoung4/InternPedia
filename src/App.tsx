@@ -11,6 +11,7 @@ export default function App() {
         <Route path='/' element={<Home />} />
         <Route path='/mens' element={<ShopCategory category='men' />} />
         <Route path='/womens' element={<ShopCategory category='women' />} />
+        <Route path='/all' element={<ShopCategory category='all' />} />
         <Route path='/product' element={<Product />}>
             <Route path=':productId' element={<Product />} />
         </Route>
