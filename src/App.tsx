@@ -12,10 +12,10 @@ export default function App() {
   const [temp, setTemp] = useState(0);
   const [humidity, setHumidity] = useState('');
   const [wind, setWind] = useState('');
-  const [icon, setIcon] = useState(null);
+  const [icon, setIcon] = useState<any>(null);
   const [error, setError] = useState(false);
   const [date, setDate] = useState('');
-  const [dataObj, setDataObj] = useState([]);
+  const [cachedData, setCachedData] = useState<any>(null); 
   
   //handle onchange events
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -32,45 +32,51 @@ export default function App() {
     const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=';
         //weather fetch function
         const weatherFetch = async (city: string) => {
+          if (cachedData && cachedData.name === city) {
+            // Data is in cache, use it!
+            handleWeatherData(cachedData);
+            return; 
+          }
+
+          try {
           const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
           const data = await response.json();
           console.log(data);
-          setCity(data.name);
-        
-    if(data.cod === '404') {
-      setError(true);
-    } else {
-      setError(false);
-      setTemp(Math.round(Number(data.main.temp) - 273.15));
-        setHumidity(data.main.humidity);
-          setWind(data.wind.speed);
-    
-          let iconElement = null; // Create a variable to hold the icon
-          if (data?.weather[0].main === 'Clouds') {
-            iconElement = <TiWeatherCloudy size={130}/>; // Set the icon based on condition
-          } else if (data?.weather[0].main === 'Rain') {
-            iconElement = <TiWeatherDownpour size={130}/>; // Set the icon based on condition
-          } else if (data?.weather[0].main === 'Clear') {
-            iconElement = <TiWeatherSunny size={130}/>; // Set the icon based on condition
-          } else if (data?.weather[0].main === 'Drizzle') {
-            iconElement = <TiWeatherShower size={130}/>; // Set the icon based on condition
-          } else if (data?.weather[0].main === 'Snow') {
-            iconElement = <TiWeatherSnow size={130}/>; // Set the icon based on condition
-          } else if (data?.weather[0].main === 'Thunderstorm') {
-            iconElement = <TiWeatherStormy size={130}/>; // Set the icon based on condition
-          } else {
-            iconElement = <TiWeatherPartlySunny size={130}/>; //( Set the icon based on condition
-          }
-          
-          setIcon(iconElement); // Pass the icon element to setIcon
-          
-        }
-        
-        }
-    weatherFetch(cityInput);
-    setCityInput('')
-  }
+            handleWeatherData(data);
+            setCachedData(data);
+          } catch (error) {
+              setError(true);
+            }
+          };
+        weatherFetch(cityInput);
+          setCityInput('');
+        };
 
+  
+    const handleWeatherData = (data: any) => {
+      setCity(data.name);
+      setTemp(Math.round(Number(data.main.temp) - 273.15));
+      setHumidity(data.main.humidity);
+      setWind(data.wind.speed);
+      setIcon(getIconElement(data.weather[0].main));
+    };
+
+  
+    const getIconElement = (condition: string) => {
+      let iconElement = null;
+      if (condition === 'Clouds') {
+        iconElement = <TiWeatherCloudy size={130} />;
+      } else if (condition === 'Rain') {
+        iconElement = <TiWeatherDownpour size={130} />;
+      } else if (condition === 'Clear') {
+        iconElement = <TiWeatherSunny size={130} />;
+      } 
+      return iconElement;
+    };
+
+    
+          
+  
   //useEffect for Date and time
   useEffect(() => {
            const intervalId = setInterval(() => {
