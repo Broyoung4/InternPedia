@@ -57,7 +57,7 @@ const ProductDisplay: React.FC<ProductDisplayProps> = ({ product }) => {
             <button  onClick={() => setSelect('XL') } className={`rounded-lg px-4 py-2 dark:bg-black/70 bg-white/70 outline-500 hover:border hover:border-blue-500 ${select=== "XL" ? "border border-blue-500" : ""}`}>XL</button>
           </div>
         </div> 
-        <button onClick={()=>{addToCart(product.id)}} className='my-6 outline-0 bg-blue-500 py-4 px-2 text-white rounded-xl'>ADD TO CART</button>
+        <button onClick={()=>{addToCart(product.id)}} className='my-6 outline-0 bg-blue-500 hover:bg-blue-400 py-4 px-2 text-white rounded-xl'>ADD TO CART</button>
         <p className='capitalize'><span className='font-bold'>Category : {' '}</span>{product.category}, Shoes</p>
         <p className='capitalize'><span className='font-bold'>Tags :{' '}</span>Modern, Exotic</p>
       </div>
